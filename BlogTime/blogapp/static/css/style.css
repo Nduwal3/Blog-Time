@@ -21,6 +21,11 @@ body{
     margin : -20px 0;
 }
 
+.text-wrap{
+    float: left;
+    margin: 10px;
+}
+
 .intro-header{
     position: relative;
     width: 70%;
@@ -46,11 +51,17 @@ body{
     position: absolute;
     font-size: 20px;
     /* right: 0; */
-    background: pink;
-    color: black;
-    padding: 10px;
     margin: 30px;
+    outline: none;
+    background-color:#96577a ;
+    color: white;
+    border: none;
+    padding: 10px 20px;
 }
+.content-wrapper .intro-header .layer .navigation a{
+    text-decoration: none;
+}
+
 
 .content-wrapper .intro-header .layer .navigation:hover{
     background-color: #2e3b4b;
@@ -58,12 +69,18 @@ body{
     color: pink;
 }
 
+
+
+.content-wrapper .intro-header .layer .navigation:focus{
+    outline: none;
+}
+
 .intro-header .site-heading{
     position: absolute;
     top: 250px;
     left: 250px;
     font-size: 40px;
-    color: aqua;
+    color: #ffffff;
 }
 
 .intro-header .back-button{
@@ -92,8 +109,12 @@ body{
     color: #96577a;
 }
 
-.blog-section .post-preview a h3{
+.blog-section .post-preview  h3{
     color: lightgray;
+}
+
+.blog-section .post-preview p{
+    color: #96577a;
 }
 
 .blog-section .post-info .btn{ 
@@ -109,7 +130,13 @@ body{
     text-align: justify;
 }
 
-.blog-category{
+.category-section{
+    background: #2e3b4b;
+    margin: -30px 0;
+    padding-bottom: 15px;
+}
+
+.category-section .blog-category{
     width: 40%;
     margin: 30px auto;
     font-size: 30px;
@@ -123,6 +150,19 @@ body{
 
 }
 
-.footer-wrapper{width:100%; background:#2c3847; overflow:hidden;}
-.footer{width:960px; margin:0 auto; margin-top:50px;}
-.footer p{ text-align:center; padding-bottom:50px;}
+
+/* footer css */
+
+footer{
+    background-color: #96577a;
+      padding: 30px;
+      margin-top: -15px;
+    }
+
+footer p{
+    color: #ffffff;
+}
+
+footer img{
+    height: 30px;
+}

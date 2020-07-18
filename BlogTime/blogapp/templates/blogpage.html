@@ -22,31 +22,26 @@
         <!-- <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"> -->
             {% for blog in blog_list %}
             <div class="post-preview">
-                <a href="post.html">
+               
+                <a href="">
                     <h2 class="post-title">
                         {{ blog.title}}
-                    </h2>
+                    </h2>                    
+                </a>
+               <div>
+                    {% if blog.img != null %}
+                        <img  class="text-wrap" src="{{blog.img.url}}" alt="">
+                    {% endif %}
                     <h3 class="post-subtitle">
                         {{ blog.body}}
                     </h3>
-                </a>
-                <div class="post-info">
-                    <button class="btn">Read more</button>
-                </div>
+               </div>
                 <p class="post-meta">Posted by <a href="#">{{ blog.author}}</a>  on {{blog.created_date}}</p>
             </div>
             <hr>
 
             {% endfor %}
            
-           
-            
-            <!-- Pager -->
-            <ul class="pager">
-                <li class="next">
-                    <a href="#">Older Posts &rarr;</a>
-                </li>
-            </ul>
         </div>
     <!-- </div> -->
 </div>
