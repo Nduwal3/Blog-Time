@@ -1,0 +1,128 @@
+body{
+    margin: 0;
+}
+
+.position-left{
+    left: 0;
+}
+
+.position-right{
+    right: 0;
+}
+
+.small-banner{
+    height: 350px !important;
+}
+
+.content-wrapper{
+    background-color: #2e3b4b;
+    width: 100%;
+    height: 550px;
+    margin : -20px 0;
+}
+
+.intro-header{
+    position: relative;
+    width: 70%;
+    margin: 10px auto ;
+    height: 500px;
+    position: relative;
+    opacity: 0.8;
+    background-size: cover;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 7px 0 rgba(105, 105, 105, 1);
+    
+}
+
+.intro-header .layer{
+    background-image: linear-gradient(90deg, black, transparent);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.content-wrapper .intro-header .layer .navigation{
+    position: absolute;
+    font-size: 20px;
+    /* right: 0; */
+    background: pink;
+    color: black;
+    padding: 10px;
+    margin: 30px;
+}
+
+.content-wrapper .intro-header .layer .navigation:hover{
+    background-color: #2e3b4b;
+    border: 1px solid pink;
+    color: pink;
+}
+
+.intro-header .site-heading{
+    position: absolute;
+    top: 250px;
+    left: 250px;
+    font-size: 40px;
+    color: aqua;
+}
+
+.intro-header .back-button{
+    padding: 10px;
+}
+
+.container{
+    width: 70%;
+    margin: 0 auto;
+}
+
+.blog-section{
+    background-color: #344152;
+}
+
+.blog-section .post-preview{
+    background-color:#2e3b4b ;
+    padding: 20px;
+}
+
+.blog-section .post-preview a{
+    text-decoration: none;    
+}
+
+.blog-section .post-preview a h2{
+    color: #96577a;
+}
+
+.blog-section .post-preview a h3{
+    color: lightgray;
+}
+
+.blog-section .post-info .btn{ 
+    outline: none;
+    background-color:#96577a ;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+}
+
+.post-subtitle{
+    font-size: 16px;
+    text-align: justify;
+}
+
+.blog-category{
+    width: 40%;
+    margin: 30px auto;
+    font-size: 30px;
+}
+
+.blog-category a{
+    display: inline;
+    font-size: 30px;
+    text-decoration: none;
+    color: #96577a;
+
+}
+
+.footer-wrapper{width:100%; background:#2c3847; overflow:hidden;}
+.footer{width:960px; margin:0 auto; margin-top:50px;}
+.footer p{ text-align:center; padding-bottom:50px;}

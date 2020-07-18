@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+
+<div class="content-wrapper">
+    <header class="intro-header" style="background-image: url({% static 'img/home1.jpg' %})">
+        <div class="layer">
+            <div class="navigation position-right"><a href="blogs">Blogs</a></div>
+            <div class="site-heading">
+                <h1>Blog Time</h1>
+                <hr class="small">
+                <span class="subheading">A Time for yourself, Because you're worth it</span>
+            </div>
+        </div>    
+    </header>
+</div>
+
+<div class="text-center blog-category">
+
+    {% for category in category_list%}
+    <a href="">. {{ category}}</a>
+
+    {% endfor%}
+</div>
+
+{% endblock%}
+

@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="content-wrapper">
+    <header class="intro-header " style="background-image: url({% static 'img/home1.jpg' %});">
+
+        <div class="layer">
+            <div class="navigation position-left"><a href="/" style="color: white;">Back</a></div>
+            <div class="site-heading">
+                <h1>Blog Time</h1>
+                <hr class="small">
+                <span class="subheading">A Time for yourself, Because you're worth it</span>
+            </div>
+        </div>    
+    </header>
+</div>
+
+<!-- Main Content -->
+<div class="blog-section">
+    <div class="container">
+        <!-- <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"> -->
+            {% for blog in blog_list %}
+            <div class="post-preview">
+                <a href="post.html">
+                    <h2 class="post-title">
+                        {{ blog.title}}
+                    </h2>
+                    <h3 class="post-subtitle">
+                        {{ blog.body}}
+                    </h3>
+                </a>
+                <div class="post-info">
+                    <button class="btn">Read more</button>
+                </div>
+                <p class="post-meta">Posted by <a href="#">{{ blog.author}}</a>  on {{blog.created_date}}</p>
+            </div>
+            <hr>
+
+            {% endfor %}
+           
+           
+            
+            <!-- Pager -->
+            <ul class="pager">
+                <li class="next">
+                    <a href="#">Older Posts &rarr;</a>
+                </li>
+            </ul>
+        </div>
+    <!-- </div> -->
+</div>
+
+<!-- <hr> -->
+
+{% endblock %}
