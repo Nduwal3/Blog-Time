@@ -49,21 +49,29 @@ body{
 
 .content-wrapper .intro-header .layer .navigation{
     position: absolute;
-    font-size: 20px;
-    /* right: 0; */
-    margin: 30px;
+    font-size: 15px;
+    right: 0;
     outline: none;
     background-color:#96577a ;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 20px;
+    width: 100%;
+    text-align: right;
 }
 .content-wrapper .intro-header .layer .navigation a{
     text-decoration: none;
+    font-size: 12px;
+    margin-right: 20px;
+    padding: 20px;
 }
 
+/* .nav-btn{
+    font-size: ;
+} */
 
-.content-wrapper .intro-header .layer .navigation:hover{
+
+.content-wrapper .intro-header .layer .navigation a:hover{
     background-color: #2e3b4b;
     border: 1px solid pink;
     color: pink;
@@ -71,7 +79,7 @@ body{
 
 
 
-.content-wrapper .intro-header .layer .navigation:focus{
+.content-wrapper .intro-header .layer .navigation a:focus{
     outline: none;
 }
 

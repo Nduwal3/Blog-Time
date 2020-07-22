@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlogTime</title>
+</head>
+<body>
+    {% if form.errors %}
+    <p>Something's wrong with what you've entered</p>
+    {% endif %}
+    
+    {% if next %}
+    <p> you cannot access the page </p>
+    {% endif %}
+
+    <form action="{% url 'login' %}" method="POST">
+        {% csrf_token %}
+
+        {{form.as_p}}
+
+        <p><input type="submit" value="login"></p>
+        <input type="hidden" name="next" value="{{ next }}">
+    </form>
+</body>
+</html>

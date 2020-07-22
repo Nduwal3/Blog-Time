@@ -15,18 +15,30 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from  blogapp import views
+# from blogapp import views
 from django.conf import settings
 from django.contrib.staticfiles.urls import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
+    
+    # path('accounts/',include('django.contrib.auth.urls')),
+    # path('', views.home , name= "home"),
+    # path('blogs/', views.blog_list, name="blog_list"),
+    path('blogs/', include('blogapp.urls')),
+    path('accounts/', include('accounts.urls')),
     path('admin/', admin.site.urls),
-    path('', views.home , name= "home"),
-    path('blogs/', views.blog_list, name="blog_list"),
-    path('user/', include('user.urls')),
 ]
 
 if settings.DEBUG:
+    import debug_toolbar
     urlpatterns += staticfiles_urlpatterns()
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    
+    urlpatterns = [
+        path('__debug__/', include(debug_toolbar.urls)),
+    ] + urlpatterns
+
+    
+    

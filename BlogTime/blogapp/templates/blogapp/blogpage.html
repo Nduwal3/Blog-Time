@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'blogapp/base.html' %}
 {% load static %}
 
 {% block content %}
@@ -6,8 +6,9 @@
     <header class="intro-header " style="background-image: url({% static 'img/home1.jpg' %});">
 
         <div class="layer">
-            <div class="navigation position-left">
-                <a href="/" style="color: white;">Back</a>
+            <div class="navigation position-right">
+                <a href="/accounts/profile/" class="nav-btn" style="color: white;">Profile</a>
+                <a href="/accounts/logout/"class="nav-btn" style="color: white;">Logout</a>
                 <!-- <a href="/user/detail/{{user.id}}" style="color: white;">Profile</a> -->
             </div>
             <div class="site-heading">

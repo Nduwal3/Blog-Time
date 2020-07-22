@@ -38,10 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blogapp',
-    'user',
+    'accounts',
+    'debug_toolbar',
 ]
 
 MIDDLEWARE = [
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -68,6 +70,8 @@ TEMPLATES = [
         },
     },
 ]
+
+INTERNAL_IPS = ['127.0.0.1']
 
 WSGI_APPLICATION = 'BlogTime.wsgi.application'
 
@@ -114,6 +118,8 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+LOGIN_REDIRECT_URL = "/blogs/"
 
 
 # Static files (CSS, JavaScript, Images)
