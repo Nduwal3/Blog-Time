@@ -1,26 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BlogTime</title>
-</head>
-<body>
-    {% if form.errors %}
-    <p>Something's wrong with what you've entered</p>
-    {% endif %}
-    
-    {% if next %}
-    <p> you cannot access the page </p>
-    {% endif %}
+{% extends 'blogapp/base.html' %}
 
-    <form action="{% url 'login' %}" method="POST">
-        {% csrf_token %}
+{% load static%}
+{% block content %}
+    <div class="login-content">
+        <div class="container">
+            
+                <h2>Login</h2>
+                {% if form.errors %}
+                <p>Something's wrong with what you've entered</p>
+                {% endif %}
 
-        {{form.as_p}}
+                {% if next %}
+                <p> you cannot access the page </p>
+                {% endif %}
 
-        <p><input type="submit" value="login"></p>
-        <input type="hidden" name="next" value="{{ next }}">
-    </form>
-</body>
-</html>
+                <form action="{% url 'login' %}" method="POST">
+                    {% csrf_token %}
+                
+                    {{form.as_p}}
+                
+                    <p><input type="submit" value="login"></p>
+                    <input type="hidden" name="next" value="{{ next }}">
+                </form>
+            
+        </div>
+    </div>
+
+{% endblock %}

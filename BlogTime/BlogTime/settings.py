@@ -119,7 +119,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-LOGIN_REDIRECT_URL = "/blogs/"
+AUTH_USER_MODEL = 'accounts.User'
 
 
 # Static files (CSS, JavaScript, Images)

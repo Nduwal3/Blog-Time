@@ -1,14 +1,40 @@
+{% load static %}
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
+    <link rel="icon" href="{% static 'img/logo.png'  %}">
+    <link type="text/css" href="{% static 'css/style.css'  %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
-<body>
-    Name: {{request.user.get_full_name}}<br>
-    Username: {{request.user.username}} </br>
-    Email: {{ request.user.email}}
+<body class="container content-wrapper ">
+    <div class="navigation position-right">
+        <a href="/blogs/blogs/"class="nav-btn" style="color: white;">Blogs</a>
+        <a href="/accounts/profile/" class="nav-btn" style="color: white;">Profile</a>
+        <a href="/accounts/logout/"class="nav-btn" style="color: white;">Logout</a>
+        
+        <!-- <a href="/user/detail/{{user.id}}" style="color: white;">Profile</a> -->
+    </div>
+    <div>
+        {% if request.user.profile_img %} 
+            <img class="profile_pic" src="{{ request.user.profile_img.url}}" alt="{{request.user.get_full_name}}">
+        {% else %}
+            <img class="profile_pic" src="{% static 'img/default.png'%}" alt="{{request.user.get_full_name}}">
+        {% endif %}
+    </div>
+    
+    
+    <div class="detail">
+        <p>Name: {{request.user.get_full_name}}</p>
+        <p>Username: {{request.user.username}} </p>
+        <p>Email: {{ request.user.email}} </p>
+        <p>Bio: {{request.user.bio}}</p>
+    </div>
+   
     
 </body>
 </html>

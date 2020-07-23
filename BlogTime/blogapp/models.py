@@ -16,7 +16,7 @@ class Blog(models.Model):
     body = models.TextField()
     author = models.ForeignKey(Author, on_delete = models.PROTECT, related_name = "author")
     created_date = models.DateTimeField(auto_now = False, auto_now_add = False)
-    img = models.ImageField(upload_to=settings.MEDIA_ROOT, blank= True, null=True)
+    img = models.ImageField(upload_to='images/', blank= True, null=True)
     updated = models.DateTimeField(auto_now = False, auto_now_add = False)
     is_published = models.BooleanField(default = False)
 

@@ -7,6 +7,7 @@
 
         <div class="layer">
             <div class="navigation position-right">
+                <a href="/blogs/blogs/"class="nav-btn" style="color: white;">Blogs</a>
                 <a href="/accounts/profile/" class="nav-btn" style="color: white;">Profile</a>
                 <a href="/accounts/logout/"class="nav-btn" style="color: white;">Logout</a>
                 <!-- <a href="/user/detail/{{user.id}}" style="color: white;">Profile</a> -->
@@ -33,7 +34,7 @@
                     </h2>                    
                 </a>
                <div>
-                    {% if blog.img != null %}
+                    {% if blog.img %}
                         <img  class="text-wrap" src="{{blog.img.url}}" alt="">
                     {% endif %}
                     <h3 class="post-subtitle">
@@ -45,9 +46,19 @@
             <hr>
 
             {% endfor %}
+
+            <div class="create-blog">
+                <form method="POST">
+                    {% csrf_token %}
+
+                    {{ form.as_p}}
+
+                    <input type="submit" value="create">
+                </form>
+            </div>
            
         </div>
-        <div class="pagination">
+        <!-- <div class="pagination">
             <span class="step-links">
                 {% if page_obj.has_previous %}
                     <a href="?page=1">&laquo; first</a>
@@ -63,7 +74,7 @@
                     <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
                 {% endif %}
             </span>
-        </div>
+        </div> -->
     <!-- </div> -->
 </div>
 
