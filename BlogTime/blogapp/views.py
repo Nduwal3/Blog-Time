@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.views import View
 # from django.core.paginator import Paginator
@@ -44,13 +44,20 @@ class BlogView(View):
         context = {
             'form' : form
         }
-        return render(request, 'blogapp/blogpage.html', context)
+        return render(request, 'blogapp/create_blog.html', context)
     
 
     def post(self, request, *args, **kwargs):
         form = BlogModelForm(request.POST)
         if form.is_valid():
             print(form.cleaned_data)
+            form.save(commit=False)
+            current_user = request.user
+            print(current_user)
+            form.author= current_user
+            form.save()
+            return redirect('/blogs/blogs/')
+        
         
 
 

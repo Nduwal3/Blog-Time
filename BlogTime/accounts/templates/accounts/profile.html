@@ -34,6 +34,8 @@
         <p>Email: {{ request.user.email}} </p>
         <p>Bio: {{request.user.bio}}</p>
     </div>
+    <div><a href="/accounts/profile/update/{{request.user.id}}/">Edit</a></div>
+    
    
     
 </body>

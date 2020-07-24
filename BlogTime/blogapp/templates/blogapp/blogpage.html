@@ -8,6 +8,7 @@
         <div class="layer">
             <div class="navigation position-right">
                 <a href="/blogs/blogs/"class="nav-btn" style="color: white;">Blogs</a>
+                <a href="/blogs/blogs/create"class="nav-btn" style="color: white;">Write Blog</a>
                 <a href="/accounts/profile/" class="nav-btn" style="color: white;">Profile</a>
                 <a href="/accounts/logout/"class="nav-btn" style="color: white;">Logout</a>
                 <!-- <a href="/user/detail/{{user.id}}" style="color: white;">Profile</a> -->
@@ -41,21 +42,11 @@
                         {{ blog.body}}
                     </h3>
                </div>
-                <p class="post-meta">Posted by <a href="#">{{ blog.author}}</a>  on {{blog.created_date}}</p>
+                <p class="post-meta">Posted by <a href="#">{{ blog.user}}</a>  on {{blog.created_date}}</p>
             </div>
             <hr>
 
             {% endfor %}
-
-            <div class="create-blog">
-                <form method="POST">
-                    {% csrf_token %}
-
-                    {{ form.as_p}}
-
-                    <input type="submit" value="create">
-                </form>
-            </div>
            
         </div>
         <!-- <div class="pagination">

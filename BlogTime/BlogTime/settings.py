@@ -132,4 +132,24 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+# for development
+EMAIL_HOST = 'smtp.mailtrap.io'
+EMAIL_HOST_USER = '800885ca7b7dc4'
+EMAIL_HOST_PASSWORD = 'bc8696fc5af47e'
+EMAIL_PORT = '2525'
+
+
+
+# production
+# also host need to configure in their gmail settings
+#manageyouraccounts>> security>> Less secure app access (on)
+
+# EMAIL_USE_TLS = True
+# EMAIL_HOST = "smtp.gmail.com"
+# EMAIL_HOST_USER = "sender gmail"
+# EMAIL_HOST_PASSWORD = "sender mail password"
+# EMAIL_PORT = 587
+
+
+
 
